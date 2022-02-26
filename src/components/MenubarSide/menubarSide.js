@@ -68,6 +68,9 @@ export const MessageRoundedd = styled(MessageRounded)`
     ${common}
     width: ${({size})=> size==="37px" ? '37px' : '27px'};
     height: ${({size})=> size==="37px" ? '37px' : '27px'};
+    :hover{
+        color: ${({size})=> size==="25px" ? '#fff' : '#758B9D'};
+    }
 `
 export const EditAltt = styled(EditAlt)`
     ${common}
@@ -121,6 +124,7 @@ export const EditPersonal = styled.div`
     left: 400px;
     width: 400px;
     height: 350px;
+    border-radius: 3px;
     background: ${({color})=>color==='createFolder'? '#0C1116' : '#17212B'}; 
 `
 
@@ -203,7 +207,7 @@ export const TrashAltt = styled(TrashAlt)`
 `
 
 export const CreateFolder = styled.div`
-    display:${({toggle})=>toggle==='createFolder' ? 'flex' : 'none'};
+    display:${({toggle})=>toggle ? 'flex' : 'none'};
     flex-direction: column;
     position: absolute;
     position: absolute;
@@ -212,6 +216,7 @@ export const CreateFolder = styled.div`
     width: 325px;
     height: 450px;
     background: #17212B;
+    border-radius: 3px;
 `
 
 export const NewFolder = styled.div`
@@ -222,13 +227,14 @@ export const NewFolder = styled.div`
     font-size: 20px;
     font-weight: 500;
     color: whitesmoke;
-    padding: 30px 25px;
+    padding: 20px 25px;
 `
 
 export const InputContainer = styled.div`
     width: 100%;
     height: 50px;
-    padding: 10px 25px;
+    padding: 5px 25px;
+    margin-bottom: 20px;
 `
 
 export const FolderName = styled.div`
@@ -238,7 +244,7 @@ export const FolderName = styled.div`
 `
 
 export const FolderPosition = styled.div`
-    position: relative;
+    position: relative
 `
 
 export const InputFolder = styled.input`
@@ -250,6 +256,7 @@ export const InputFolder = styled.input`
     background: transparent;
     color: whitesmoke;
     font-size: 17px;
+    padding-right: 35px;
 `
 
 export const Folderrr = styled(FolderOutline)`
@@ -261,9 +268,63 @@ export const Folderrr = styled(FolderOutline)`
 
 `
 
-export const FolderLine = styled.div`
+export const IncludedChats = styled.div`
+    font-size: 16px;
+    color: #03bafc;
+    font-weight: 500;
+    padding: 13px 20px;
+
+`
+
+export const AddChats = styled.div`
+    font-size: 16px;
+    color: #03bafc;
+    font-weight: 500;
+    width: 100%;
+    padding: 8px 20px;
+    :hover{
+        background: rgba(115, 126, 135, 0.1);
+    }
+`
+
+export const ChooseTypes = styled.div`
+    font-size: 14px;
+    font-weight: 500;
+    color: #737E87;
+    padding: 8px 20px;
+`
+
+export const Buttons = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    
+`
+
+export const Button = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #03bafc;
+    font-weight: 500;
+    width: 80px;
+    height: 35px;
+    margin: 0 8px;
+    border-radius: 8px;
+    :hover{
+        background: rgba(115, 126, 135, 0.1);
+    }
+    :active{
+        background: rgba(115, 126, 135, 0.2);
+    }
+`
+
+export const Line = styled.div`
     width: 100%;
     height: 10px;
-    background: #232E3C;
-    margin-top: 30px;
+    padding: 5px 0;
+    background: red;
+    margin-top: 5px;
+    background: rgba(115, 126, 135, 0.1)
 `
