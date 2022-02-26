@@ -1,17 +1,12 @@
-import { useState, createRef, useEffect } from "react"
-import { ChatFilll, Closee, ChatCount, Chatt, Container, EditAltt, IconsContainer, IconsTitle, Menuu, MessageRoundedd, Userr, User33, EditPersonal, Folder, FolderContainer, MyFolder, MyFolderIcons, ChatsCount, ChatCountt, TrashAltt, CreateFolder, NewFolder, InputFolder, InputContainer, FolderName, Folderrr, FolderPosition, FolderLine } from "./menubarSide"
+import { useState, useEffect } from "react"
+import { ChatFilll, Closee, ChatCount, Chatt, Container, EditAltt, IconsContainer, IconsTitle, Menuu, MessageRoundedd, Userr, User33, EditPersonal, Folder, FolderContainer, MyFolder, MyFolderIcons, ChatsCount, ChatCountt, TrashAltt, CreateFolder, NewFolder, InputFolder, InputContainer, FolderName, Folderrr, FolderPosition, FolderLine, IncludedChats, AddChats, ChooseTypes, Buttons, Button, Line } from "./menubarSide"
 
 
 const MenubarSide = () =>{
 
     const [chatActive, setChatActive] = useState('bir')
     const [createFolder, setCreateFolder] = useState('')
-    const reff= createRef()
-    
 
-    
-        
-    
 
     return( 
         <Container color={createFolder === 'createFolder' ? createFolder : null}  >
@@ -66,19 +61,31 @@ const MenubarSide = () =>{
                     </ChatsCount>
                     <TrashAltt />
                 </MyFolderIcons>
-                <MyFolder myFolder onClick={()=>setCreateFolder('createFolder')}>CREATE NEW FOLDER</MyFolder>
+                <MyFolder myFolder onClick={()=>setCreateFolder(true)}>CREATE NEW FOLDER</MyFolder>
                 <ChatCountt padding={'20px'}>Create folder for different groups of chats and quickly switch between them.</ChatCountt>
             </EditPersonal>
-            <CreateFolder  toggle={createFolder === 'createFolder' ? createFolder : null} >
+            <CreateFolder  toggle={createFolder === true && createFolder} >
                 <NewFolder>New Folder</NewFolder>
                 <InputContainer>
                     <FolderName>Folder name</FolderName>
                     <FolderPosition>
                        <InputFolder  />
-                       <Folderrr ref={reff} />
+                       <Folderrr />
                     </FolderPosition>
                 </InputContainer>
-                <FolderLine />
+                <Line />
+                <IncludedChats>Included Chats</IncludedChats>
+                <AddChats>ADD CHATS</AddChats>
+                <ChooseTypes>Choose chats and types of chats that will appear in this folder</ChooseTypes>
+                <Line />
+                <IncludedChats>Excluded Chats</IncludedChats>
+                <AddChats>REMOVE CHATS</AddChats>
+                <ChooseTypes>Choose chats and types of chats that will never appear in this folder</ChooseTypes>
+                <Buttons>
+                    <Button onClick={()=>setCreateFolder(false)}>CANCEL</Button>
+                    <Button>CREATE</Button>
+                </Buttons>
+                
             </CreateFolder>
         </Container>
     )
