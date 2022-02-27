@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 450px;
     height: 100%;
-    background-color: #282E33;
+    background-color: #17212B;
 `
 
 export const Chat = styled.div`
@@ -20,7 +20,7 @@ export const Chat = styled.div`
 export const Search = styled.input`
     width: 100%;
     height: 100%;
-    background: #3D444B;
+    background: #242F3D;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -32,7 +32,23 @@ export const Search = styled.input`
 export const ChatsContainer = styled.div`
     width: 100%;
     height: calc(100vh - 90px);
-    overflow-y: auto;
+    overflow-y: ${({scroll})=> scroll ? 'auto' : 'hidden'};
+    ::-webkit-scrollbar{
+        width: 3px;
+    }
+
+    ::-webkit-scrollbar-track{
+        background-color: #666;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+    }
+
+    ::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-color: #888;
+        
+    }
+
 `
 
 export const Chatss = styled.div`
