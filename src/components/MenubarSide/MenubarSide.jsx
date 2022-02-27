@@ -30,13 +30,13 @@ const MenubarSide = () =>{
             <IconsContainer color={chatActive === 'uch' && chatActive} onClick={()=>setChatActive('uch')}>
                 <ChatCount>10</ChatCount>
                 {
-                    chatActive === 'uch' ? <ChatFilll /> : <MessageRoundedd />
+                    chatActive === 'uch' ? <ChatFilll /> : <Chatt />
                 }
                 
                 <IconsTitle>Unread</IconsTitle>
             </IconsContainer>
             <IconsContainer color={chatActive === 'tort' && chatActive} onClick={()=>setChatActive('tort')}>
-                <EditAltt />
+                <EditAltt color={chatActive} />
                 <IconsTitle>Edit</IconsTitle>
             </IconsContainer>
             <EditPersonal color={createFolder === 'createFolder' ? createFolder : null} toggle={chatActive === 'tort' && chatActive}>

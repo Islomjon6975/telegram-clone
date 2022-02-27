@@ -43,8 +43,8 @@ export const Chatt = styled(MessageRounded)`
 export const ChatFilll = styled(ChatFill)`
     ${common}
     color:#5EB4F6 ;
-    width: 37px;
-    height: 37px;
+    width: 30px;
+    height: 30px;
 `
 
 
@@ -76,6 +76,7 @@ export const EditAltt = styled(EditAlt)`
     ${common}
     width: 37px;
     height: 37px;
+    color: ${({color})=>color==="tort" ? '#5EB4F6' : null};
 `
 
 export const IconsContainer = styled.div`
@@ -121,7 +122,7 @@ export const EditPersonal = styled.div`
     flex-direction: column;
     position: absolute;
     top: 30px;
-    left: 400px;
+    left: 600px;
     width: 400px;
     height: 350px;
     border-radius: 3px;
@@ -212,7 +213,7 @@ export const CreateFolder = styled.div`
     position: absolute;
     position: absolute;
     top: 85px;
-    left: 438px;
+    left: 638px;
     width: 325px;
     height: 450px;
     background: #17212B;

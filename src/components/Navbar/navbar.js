@@ -11,7 +11,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 30px;
-    background: #1F2936;
+    background: #3A4047;
 `
 
 export const Closee = styled(Close)`
@@ -28,7 +28,6 @@ export const Minuss = styled(Minus)`
     width: 30px;
     height: 30px;
     color:#566572;
-    margin: 0px 10px;
     :hover{
         background: #25303E;
         color: #fff;
@@ -36,11 +35,11 @@ export const Minuss = styled(Minus)`
 `
 
 export const MinusBackk = styled(MinusBack)`
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     color:#566572;
     transform: rotate(270deg) ;
-    margin: 0px 10px;
+    padding: 5px;
     :hover{
         background: #25303E;
         color: #fff;
