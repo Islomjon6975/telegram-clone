@@ -6,13 +6,13 @@ export const Container = styled.div`
     align-items: center;
     width: calc(100vw - 450px - 75px);
     height: 100%;
-    background: #18191D;
+    background: #0E1621;
 `
 
 export const Text = styled.div`
-    font-size: 20px;
+    font-size: 15px;
     color: whitesmoke;
-    background: #2F343B;
+    background: #1E2C3A;
     padding: 8px 15px;
     border-radius: 20px;
 `

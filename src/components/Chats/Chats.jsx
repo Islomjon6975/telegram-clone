@@ -4,17 +4,17 @@ import { useState } from "react"
 
 const Chats = () => {
     const [data, setData] = useState(chats)
-    console.log(data)
-
+    const [scroll, setScroll] = useState(false)
+    
     return(
         <Container>
             <Chat>
                 <Search placeholder="Search" />
             </Chat>
-            <ChatsContainer>
+            <ChatsContainer scroll={scroll && scroll} onMouseEnter={()=>setScroll(true)} onMouseLeave={()=>setScroll()}>
             {
                 data.map(({id, name, img, message, hours, minutes})=>(
-                    <Chatss>
+                    <Chatss  key={id}>
                         <Image src={img} />
                         <SmsContainer>
                             <NameOfUser>{name}</NameOfUser>

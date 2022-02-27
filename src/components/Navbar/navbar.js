@@ -11,7 +11,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 30px;
-    background: #3A4047;
+    background: #1F2936;
 `
 
 export const Closee = styled(Close)`
