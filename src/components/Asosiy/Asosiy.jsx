@@ -7,6 +7,7 @@ const Asosiy = () => {
     return(
         <Container>
             <MenubarSide />
+            {/* how are you */}
         </Container>
     )
 }
