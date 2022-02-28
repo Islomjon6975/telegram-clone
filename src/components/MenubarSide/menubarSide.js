@@ -20,6 +20,7 @@ import {MoonOutline} from "@styled-icons/evaicons-outline/MoonOutline";
 import {ToggleOff} from '@styled-icons/material-twotone/ToggleOff'
 import {ToggleOn} from '@styled-icons/material-twotone/ToggleOn'
 import {ArrowheadLeftOutline} from '@styled-icons/evaicons-outline/ArrowheadLeftOutline'
+import {Camera} from '@styled-icons/boxicons-solid/Camera'
 
 export const Container = styled.div`
     position: relative;
@@ -614,4 +615,95 @@ export const Arrow_close = styled(ArrowheadLeftOutline)`
         transform: translateX(-3px)
     }
     
+`
+
+export const NewGroups = styled.div`
+    display: ${({newgroup})=>newgroup ? 'flex' : 'none'};
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 170px;
+    background: #17212B;
+    border-radius: 5px;
+    z-index: 10px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+`
+
+export const NewGroups_top = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+`
+
+export const NewGroups_img = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:75px;
+    height: 75px;
+    background: #2F6EA5;
+    border-radius: 50%;
+    :hover{
+        background-color: #6AB2F2;
+    }
+`
+
+export const NewGroups_con = styled.div`
+    margin-left: 25px;
+`
+export const NewGroups_Name = styled.div`
+    font-size: 15px;
+    color: #6AB2F2;
+    font-weight: 550;
+    margin-bottom: 2px;
+`
+export const Cameraa = styled(Camera)`
+    width: 40px;
+    height: 40px;
+    color: whitesmoke;
+`
+
+export const NewGroups_input = styled.input`
+    width: 200px;
+    height: 30px;  
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #6AB2F2;
+    color: whitesmoke;
+    font-size: 15px;
+
+`
+
+export const NewGroups_bottom = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 30%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+`
+
+export const NewGroups_button = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 35px;
+    color: #6AB2F2;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 0 5px;
+    :hover{
+        background-color: #1D2A39;
+    }
 `

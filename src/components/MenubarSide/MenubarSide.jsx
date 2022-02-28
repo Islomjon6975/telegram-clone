@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import { ChatFilll, Closee, ChatCount, Chatt, Container, EditAltt, IconsContainer, IconsTitle, Menuu, MessageRoundedd, Userr, User33, EditPersonal, Folder, FolderContainer, MyFolder, MyFolderIcons, ChatsCount, ChatCountt, TrashAltt, CreateFolder, NewFolder, InputFolder, InputContainer, FolderName, Folderrr, FolderPosition, FolderLine, IncludedChats, AddChats, ChooseTypes, Buttons, Button, Line, InnerMenu, InnerMenu_logo, Logo_img, Logo_desc, Personal_img, Bookmart_container, Bookmarkk, Logo_text, Logo_name, ArrowIosDownwardd, Arrow, Inner_Arrow_container, Inner_Arrow_img, Inner_Arrow_img_container, Inner_Arrow_Checked, Arrow_Check, UserCirclee, Settings, Setting, Userss, Setting_title, Settings44, Contact, Calls, MoonOutlines, LightModee, ToggleOfff, ToggleOnn, About_telegram, About_telegram_title, About_telegram_version, Setting_con, Arrow_close } from "./menubarSide"
+import { useState, useEffect, useReducer} from "react"
+import { ChatFilll, Closee, ChatCount, Chatt, Container, EditAltt, IconsContainer, IconsTitle, Menuu, MessageRoundedd, Userr, User33, EditPersonal, Folder, FolderContainer, MyFolder, MyFolderIcons, ChatsCount, ChatCountt, TrashAltt, CreateFolder, NewFolder, InputFolder, InputContainer, FolderName, Folderrr, FolderPosition, FolderLine, IncludedChats, AddChats, ChooseTypes, Buttons, Button, Line, InnerMenu, InnerMenu_logo, Logo_img, Logo_desc, Personal_img, Bookmart_container, Bookmarkk, Logo_text, Logo_name, ArrowIosDownwardd, Arrow, Inner_Arrow_container, Inner_Arrow_img, Inner_Arrow_img_container, Inner_Arrow_Checked, Arrow_Check, UserCirclee, Settings, Setting, Userss, Setting_title, Settings44, Contact, Calls, MoonOutlines, LightModee, ToggleOfff, ToggleOnn, About_telegram, About_telegram_title, About_telegram_version, Setting_con, Arrow_close, NewGroups, NewGroups_top, NewGroups_bottom, NewGroups_img, NewGroups_con, NewGroups_Name, NewGroups_input, Cameraa, NewGroups_button } from "./menubarSide"
 import admin from '../Assets/me.jpg'
 
 const MenubarSide = () =>{
@@ -8,7 +8,23 @@ const MenubarSide = () =>{
     const [createFolder, setCreateFolder] = useState('')
     const [menu, setMenu] = useState(false)
     const [arrow, setArrow] = useState(false)
-    const [mode, setMode] =useState(false)
+    const [mode, setMode] = useState(false);
+    const [newGroup, setNewGroup] = useState(false)
+
+    const reducer = (state, action) => {
+        switch(action.type){
+            case 'newGroup':
+                setNewGroup(!newGroup);
+                return
+            case 'close':
+                setMenu(!menu)
+                setNewGroup(false)
+                return
+                
+        }
+    }
+
+    const [state, dispatch] = useReducer(reducer, null)
 
     return( 
         <Container color={createFolder === 'createFolder' ? createFolder : null}  >
@@ -45,10 +61,25 @@ const MenubarSide = () =>{
                 </Arrow>
                 <Settings>
                     <Setting_con>
-                        <Setting>
+                        <Setting onClick={()=>dispatch({type: 'newGroup'})}>
                             <Userss className="color"  />
                             <Setting_title>New Group</Setting_title>
                         </Setting>
+                        <NewGroups newgroup={newGroup && newGroup}>
+                            <NewGroups_top>
+                                <NewGroups_img>
+                                    <Cameraa />
+                                </NewGroups_img>
+                                <NewGroups_con>
+                                    <NewGroups_Name>Groups name</NewGroups_Name>
+                                    <NewGroups_input />
+                                </NewGroups_con>
+                            </NewGroups_top>
+                            <NewGroups_bottom>
+                                <NewGroups_button onClick={()=>dispatch({type: 'newGroup'})}>CANCEL</NewGroups_button>
+                                <NewGroups_button>NEXT</NewGroups_button>
+                            </NewGroups_bottom>
+                        </NewGroups>
                         <Setting>
                             <Userss className="color"  />
                             <Setting_title>New Channel</Setting_title>
@@ -81,7 +112,7 @@ const MenubarSide = () =>{
                         <About_telegram_title>Telegram Desktop</About_telegram_title>
                         <About_telegram_version>Version 3.5.1 x64 - About</About_telegram_version>
                     </About_telegram>
-                    <Arrow_close onClick={()=>setMenu(!menu)} />
+                    <Arrow_close onClick={()=>dispatch({type:'close'})} />
             </InnerMenu>
             
 
