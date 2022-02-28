@@ -476,7 +476,7 @@ export const Inner_Arrow_Checked = styled.div`
     right: -1px;
     width: 22px;
     height: 22px;
-    background-color: #5B687E;
+    background-color: #276899;
     border-radius: 50%;
     border: 3px solid #282E33;
 `
@@ -607,5 +607,11 @@ export const Arrow_close = styled(ArrowheadLeftOutline)`
     right: 10px;
     bottom: 10px;
     color: #185680;
+    cursor: pointer;
+    transition: all .5s ease;
+    :hover{
+        transform: scale(0.77);
+        transform: translateX(-3px)
+    }
     
 `
