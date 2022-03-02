@@ -101,7 +101,7 @@ const MenubarSide = () =>{
                             <Setting_title>Night Mode</Setting_title>
                             
                             {
-                                !mode ? <ToggleOnn onClick={()=>setMode(!mode)} /> : <ToggleOfff onClick={()=>setMode(!mode)}   />
+                                !mode ? <ToggleOfff onClick={()=>setMode(!mode)} /> : <ToggleOnn onClick={()=>setMode(!mode)}   />
                             }
                             
                         </Setting>
